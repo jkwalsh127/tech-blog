@@ -1,0 +1,16 @@
+.card {
+    width: 80%;
+}
+
+.card-head {
+    color: #5b7f67;
+    background-color: #ebf4e7;
+}
+
+.post-title {
+    font-size: 20px;
+}
+
+.post-date {
+    font-size: 16px;
+}
