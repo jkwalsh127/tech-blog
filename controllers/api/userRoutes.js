@@ -14,11 +14,14 @@ router.get('/', async (req, res) => {
   });
 
 // POST create a new user
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
     const userData = await User.create(req.body);
-    res.status(200).json(userData);
-  } catch (err) {
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      res.status(200).json(userData);
+    });  } catch (err) {
     res.status(400).json(err);
   }
 });
@@ -40,7 +43,12 @@ router.post('/login', async (req, res) => {
         .json({ message: 'That is the incorrect password for this user' });
       return;
     }
-    res.json({ user: userData, message: 'You are now logged in!' });
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.json({ user: userData, message: 'You are now logged in!' });
+    });
   } catch (err) {
     res.status(400).json(err);
   }
