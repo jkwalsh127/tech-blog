@@ -3,16 +3,16 @@ const { Post, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // GET all posts
-router.get('/', async (req, res) => {
-  try {
-    const postData = await Post.findAll({
-      include: [{ model: User }],
-    });
-    res.status(200).json(postData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get('/', async (req, res) => {
+//   try {
+//     const postData = await Post.findAll({
+//       include: [{ model: User }],
+//     });
+//     res.status(200).json(postData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // CREATE a post
 router.post('/', withAuth, async (req, res) => {

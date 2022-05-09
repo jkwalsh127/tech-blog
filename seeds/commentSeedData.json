@@ -1,32 +1,17 @@
 [
     {
-	    "content": "Here is the content of this comment",
-	    "date": "1-1-1111",
-	    "user_id": 1,
-        "post_id": 1
+	    "content": "Here is the content of this comment"
     },
     {
-        "content": "Here is the content of this comment",
-        "date": "2-22-2222",
-        "user_id": 2,
-        "post_id": 2
+        "content": "Here is the content of this comment"
     },
     {
-        "content": "Here is the content of this comment",
-        "date": "1-12-1222",
-        "user_id": 3,
-        "post_id": 3
+        "content": "Here is the content of this comment"
     },
     {
-        "content": "Here is the content of this comment",
-        "date": "2-12-1212",
-        "user_id": 4,
-        "post_id": 4
+        "content": "Here is the content of this comment"
     },
     {
-        "content": "Here is the content of this comment",
-        "date": "2-21-2121",
-        "user_id": 5,
-        "post_id": 5
+        "content": "Here is the content of this comment"
     }
 ]

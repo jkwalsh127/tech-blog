@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -17,6 +17,29 @@ router.get('/', async (req, res) => {
 
     res.render('homepage', { 
       posts, 
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/post/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          model: Comment,
+          attributes: ['username']
+        }
+      ]
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render('view-post', { 
+      ...post, 
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -42,14 +65,16 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
-  res.render('login');
+router.get('/login', async (req, res) => {
+  try {
+    if (req.session.logged_in) {
+      res.redirect('/');
+      return;
+    }
+    res.render('login');
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
-
-router.get('/signup', (req, res) => {
-  res.render('signup');
-});
-
-
 
 module.exports = router;

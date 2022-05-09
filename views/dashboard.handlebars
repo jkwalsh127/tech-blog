@@ -1,9 +1,19 @@
-<div class="posts">
-    <div class="card">
-        <div class="card-head">
-            <h2 class="post-title">{{post_name}}Name</h2>
-            <h3 class="post-date">{{post_date}}Date</h3>
-        </div>
-        <p>{{post_content}}Content</p>
+<div class="row mt-3">
+    {{#if posts.length}}
+    <div class="col-md-10 post-list">
+        <h3>Your Posts</h3>
+        {{#each posts as |post|}}
+        <a href="/post/{{post.id}}">
+            <div class="row mb-2">
+                <div class="col-md-8">
+                    <h4>{{post.name}}</h4>
+                </div>
+                <div class="col-md-4">
+                    <h4>{{post.date}}</h4>
+                </div>
+            </div>
+        </a>
+        {{/each}}
     </div>
+    {{/if}}
 </div>
