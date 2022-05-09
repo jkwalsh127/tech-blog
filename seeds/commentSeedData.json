@@ -1,17 +1,27 @@
 [
     {
-	    "content": "Here is the content of this comment"
+	    "content": "Here is the content of this comment",
+        "user_id": 1,
+        "post_id": 1
     },
     {
-        "content": "Here is the content of this comment"
+        "content": "Here is the content of this comment",
+        "user_id": 2,
+        "post_id": 2
     },
     {
-        "content": "Here is the content of this comment"
+        "content": "Here is the content of this comment",
+        "user_id": 3,
+        "post_id": 3
     },
     {
-        "content": "Here is the content of this comment"
+        "content": "Here is the content of this comment",
+        "user_id": 4,
+        "post_id": 4
     },
     {
-        "content": "Here is the content of this comment"
+        "content": "Here is the content of this comment",
+        "user_id": 5,
+        "post_id": 5
     }
 ]
