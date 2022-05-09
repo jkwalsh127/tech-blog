@@ -15,26 +15,22 @@ async function loginFormHandler(event) {
   
     if (response.ok) {
       document.location.replace('/dashboard');
-      document.location.reload();
-      document.location.replace('/dashboard');
     } else {
-      document.location.replace('/');
+      alert(response.statusText);
     }
 };
 
 async function signupFormHandler(event) {
   event.preventDefault();
-  const response = await fetch('/api/users/signup', {
+  const response = await fetch('/api/users', {
     method: 'POST',
     body: JSON.stringify({ username: signupUsername.value.trim(), password: signupPassword.value.trim() }),
     headers: { 'Content-Type': 'application/json' },
   });
   if (response.ok) {
     document.location.replace('/dashboard');
-    document.location.reload();
-    document.location.replace('/dashboard');
   } else {
-    document.location.replace('/');
+    alert(response.statusText);
   }
 };
 
