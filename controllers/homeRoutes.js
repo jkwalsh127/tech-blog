@@ -73,4 +73,8 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/new-post', (req, res) => {
+  res.render('new-post');
+});
+
 module.exports = router;
