@@ -1,9 +1,12 @@
+{{#each posts as |post| }}
 <div class="posts">
     <div class="card">
         <div class="card-head">
-            <h2 class="post-title">{{post_name}}NameName</h2>
-            <h3 class="post-date">{{post_date}}DateDate</h3>
+            <h1><a class="post-title" href="/post/{{post.id}}">{{post.name}}NameName</a></h1>
+            <h3 class="post-date">Posted by {{project.user.username}} on {{post.date}}DateDate</h3>
         </div>
-        <p>{{post_content}}ContentContent</p>
+        <div class="card-content-wrap"
+        <p>{{post.content}}ContentContent</p>
     </div>
 </div>
+{{/each}}

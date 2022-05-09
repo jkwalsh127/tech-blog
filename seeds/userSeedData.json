@@ -1,22 +1,22 @@
 [
     {
-        "email": "this@gmail.com",
+        "username": "this",
         "password": "password1"
     },
     {
-        "email": "that@gmail.com",
+        "username": "that",
         "password": "password2"
     },
     {
-        "email": "the@gmail.com",
+        "username": "the",
         "password": "password3"
     },
     {
-        "email": "other@gmail.com",
+        "username": "other",
         "password": "password4"
     },
     {
-        "email": "thing@gmail.com",
+        "username": "thing",
         "password": "password5"
     }
 ]
