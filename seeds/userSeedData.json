@@ -1,22 +1,10 @@
 [
     {
-        "username": "this",
+        "username": "Alligator",
         "password": "password1"
     },
     {
-        "username": "that",
+        "username": "Honey Bee",
         "password": "password2"
-    },
-    {
-        "username": "the",
-        "password": "password3"
-    },
-    {
-        "username": "other",
-        "password": "password4"
-    },
-    {
-        "username": "thing",
-        "password": "password5"
     }
 ]
