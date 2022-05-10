@@ -1,34 +1,30 @@
-<div class="row mt-3">
-    <div class=" col-md-10 card">
-        <div class="card-head">
-            <h1>{{name}}</a></h1>
-            <h3 class="post-date">Posted by {{user.username}} on {{date}}</h3>
-        </div>
-        <div class="card-content-wrap">
-            <p>{{content}}</p>
-        </div>
+<div class="flex flex-row justify-center w-full my-6">
+  <div class="card card-bordered border-primary bg-base-100 shadow-xl basis-1/1">
+    <div class="bg-primary flex flex-row justify-between px-16 py-2 w-full text-secondary">
+      <h2 class="card-title"><a href="/post/{{post.id}}">{{name}}</a></h2>
+      <h4>Posted by {{user.username}} on {{date}}</h4>
     </div>
+    <div class="card-body">
+      <p>{{content}}</p>
+    </div>
+  </div>
 </div>
-<div class="row mt-3">
-    {{#if comments.length}}
-    <div class="col-md-10">
-        <h3>Comments</h3>
-        {{#each comments as |comment|}}
-            <div class="row mb-2">
-                <div class="col-md-8">
-                    <h4>{{comment.username}}</h4>
-                </div>
-                <div class="col-md-4">
-                    <h4>{{comment.date}}</h4>
-                </div>
-                <div class="col-md-10">
-                    <h4>{{comment.content}}</h4>
-                </div>
+
+{{#if comments.length}}
+<div class="flex flex-row justify-start ml-16 my-6">
+    <h3 style="font-size: 22px;">Comments</h3>
+</div>
+    {{#each comments as |comment|}}
+    <div class="flex flex-row justify-center w-full my-6">
+        <div class="card card-bordered border-primary bg-base-100 shadow-xl basis-1/1">
+            <div class="bg-primary flex flex-row justify-between px-16 py-2 w-full text-secondary">
+                <h4>Posted by {{comment.username}} on {{comment.date}}</h4>
             </div>
-        {{/each}}
+            <div class="card-body">
+                <p>{{comment.content}}</p>
+            </div>
+        </div>
     </div>
-    {{/if}}
+    {{/each}}
 </div>
-
-
-
+{{/if}}
