@@ -1,4 +1,4 @@
-const editContent = document.querySelector('#edit-content');
+const editContent = document.querySelector('textarea[name="edit-content"]');
 const editTitle = document.querySelector('#edit-title');
 const editForm = document.querySelector('#edit-form');
 
@@ -9,9 +9,12 @@ async function editFormHandler(event) {
     window.location.toString().split("/").length - 1
   ];
 
-  const response = await fetch(`/api/posts/edit/${id}`, {
+  const response = await fetch(`/api/posts/${id}`, {
     method: 'PUT',
-    body: JSON.stringify({ name: editTitle.value.trim(), content: editContent.value.trim() }),
+    body: JSON.stringify({ 
+      name: editTitle.value.trim(), 
+      content: editContent.value.trim() 
+    }),
     headers: { 'Content-Type': 'application/json' },
   });
   if (response.ok) {
@@ -21,4 +24,4 @@ async function editFormHandler(event) {
   }
 };
 
-editForm.addEventListener('submit', editFormHandler);
+document.querySelector("#edit-form").addEventListener("submit", editFormHandler);
