@@ -80,8 +80,21 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-router.get('/new-post', (req, res) => {
-  res.render('new-post');
+router.get('/new-post', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('new-post', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

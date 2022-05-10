@@ -1,25 +1,29 @@
-<div class="row mt-3">
-  <div class="col-md-10 card">
-    <div class="card-head">
-        <h3 class="post-title">Create New Post</h3>
+<div class="flex flex-row justify-center w-full my-6">
+  <div class="card card-bordered border-primary bg-base-100 shadow-xl w-1/2">
+    <div class="bg-primary flex flex-row justify-between px-16 py-2 w-full text-secondary">
+      <h2 class="card-title">Create new post</h2>
     </div>
-    <form class="form" id="new-post-form">
-      <div class="form-group">
-        <label for="new-post-title">Title</label>
-        <input class="form-input" type="text" id="new-post-title"  placeholder="enter a title"/>
+    <div class="card-body">
+      <div class="text-center">
+        <form id="new-post-form">
+          <div class="form-floating mb-6">
+            <label for="new-post-title">Post title</label>
+            <input type="text" class="p-2 w-3/4" id="new-post-title" placeholder="enter a title" autofocus="true">
+          </div>
+          <div class="form-floating">
+            <label for="new-post-content">Content</label>
+            <input type="text" class="p-2 w-3/4 h-44" id="new-post-content" placeholder="share your thoughts" autofocus="true">
+          </div>
+          <div class="flex flex-column justify-center mt-8">
+            <button class="btn btn-primary text-primary" type="submit">Create Post</button>
+          </div>
+          <div class="flex flex-column justify-center mt-4">
+            <button class="btn btn-primary text-secondary" href="/new-post">New Post</button>
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="new-post-content">Content</label>
-        <input class="form-input" type="text" id="new-post-content" placeholder="enter your thoughts"/>
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">Create</button>
-      </div>
-    </form>
+    </div>
   </div>
-    <div class="col-md-10 card">
-        <a href="/new-post">New Post</a>
-    </div>
 </div>
 
 <script src="/js/newpost.js"></script>

@@ -19,7 +19,7 @@ Post.init(
       type: DataTypes.STRING,
     },
     date: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW
     },  
