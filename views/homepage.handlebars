@@ -1,10 +1,12 @@
   {{#each posts as |post| }}
   <div class="flex flex-row justify-center w-full my-6">
     <div class="card card-bordered border-primary bg-base-100 shadow-xl basis-1/1">
-      <div class="bg-primary flex flex-row justify-between px-16 py-2 w-full text-secondary">
-        <h2 class="card-title"><a href="/post/{{post.id}}">{{post.name}}</a></h2>
-        <h4>Posted by {{post.user.username}} on {{post.date}}</h4>
-      </div>
+      <a href="/post/{{post.id}}">
+        <div class="bg-primary flex flex-row justify-between px-16 py-2 w-full text-secondary">
+          <h2 class="card-title">{{post.name}}</h2>
+          <h4>Posted by {{post.user.username}} on {{post.date}}</h4>
+        </div>
+      </a>
       <div class="card-body">
         <p>{{post.content}}</p>
       </div>
