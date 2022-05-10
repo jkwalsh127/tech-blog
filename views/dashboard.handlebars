@@ -1,24 +1,22 @@
-<div class="row mt-3">
+<div class="flex flex-row justify-center w-full my-4">
+    <h3 class="flex justify-center" style="font-size: 30px;">Your Posts</h3>    
+</div>
+<div class="flex flex-row justify-center w-full my-6">
     {{#if posts.length}}
-    <div class="col-md-10 post-list">
-        <h3>Your Posts</h3>
-        {{#each posts as |post|}}
-        <a href="/post/{{post.id}}">
-            <div class="row mb-2">
-                <div class="col-md-8">
-                    <h4>{{post.name}}</h4>
-                </div>
-                <div class="col-md-4">
-                    <h4>{{post.date}}</h4>
-                </div>
+    {{#each posts as |post| }}
+    <a href="/post/{{post.id}}" class="card bg-base-100 shadow-xl">
+            <div class="bg-primary flex flex-row justify-between px-16 py-6 w-full text-secondary">
+                <h2 class="card-title">{{post.name}}</h2>
+                <h4>{{post.date}}</h4>
             </div>
-        </a>
-        {{/each}}
-    </div>
+    </a>
+    {{/each}}
     {{/if}}
-    <div class="col-md-10 card">
-        <a href="/new-post">New Post</a>
+</div>
+<div class="flex flex-row justify-center w-full">
+    <div class="card w-40 bg-secondary-content text-secondary">
+        <div class="card-body py-4">
+            <a href="/new-post" class="flex justify-center">New Post</a>
+        </div>
     </div>
-
- 
-
+</div>
