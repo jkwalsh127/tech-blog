@@ -1,0 +1,33 @@
+  <div class="flex flex-row justify-center w-full my-6">
+    <div class="card card-bordered border-primary bg-base-100 shadow-xl basis-1/1">
+
+    <div class="bg-primary flex flex-row justify-between px-16 py-2 w-full text-secondary">
+        <h2 class="card-title">Edit Post</h2>
+    </div>
+
+    <div class="card-body">
+        <div class="text-center">
+            <form id="edit-form">
+                <div class="form-floating mb-6">
+                    <label for="edit-title">Title</label>
+                    <input type="text" class="p-2" id="edit-title" value="{{name}}" autofocus="true">
+                </div>
+                <div class="form-floating">
+                    <label for="edit-content">Content</label>
+                    <input type="text" class="p-2" id="edit-content" value="{{content}}" autofocus="true">
+                </div>
+                <div class="flex flex-column justify-center mt-8">
+                    <button class="btn btn-primary text-primary" type="submit">Update Post</button>
+                </div>
+            </form>
+            <div class="flex flex-column justify-center mt-8">
+                <button type="button" class="delete-btn w-100 btn btn-primary text-primary">Delete Post</button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+  </div>
+
+  <script src="/js/update.js"></script>
+  <script src="/js/delete.js"></script>

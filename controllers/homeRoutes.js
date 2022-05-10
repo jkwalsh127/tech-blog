@@ -80,6 +80,10 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+router.get('/view-post', (req, res) => {
+  res.render('view-post');
+});
+
 router.get('/new-post', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
@@ -91,6 +95,28 @@ router.get('/new-post', withAuth, async (req, res) => {
     res.render('new-post', {
       ...user,
       logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/edit/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        }
+      ]
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render('edit-post', { 
+      ...post, 
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);

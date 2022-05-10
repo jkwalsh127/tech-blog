@@ -4,7 +4,7 @@
 <div class="flex flex-row justify-center w-full my-6">
     {{#if posts.length}}
     {{#each posts as |post| }}
-    <a href="/post/{{post.id}}" class="card bg-base-100 shadow-xl">
+    <a href="/edit/{{post.id}}" class="card bg-base-100 shadow-xl">
             <div class="bg-primary flex flex-row justify-between px-16 py-6 w-full text-secondary">
                 <h2 class="card-title">{{post.name}}</h2>
                 <h4>{{post.date}}</h4>
