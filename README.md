@@ -21,12 +21,12 @@ This project was an exercise in building my first full-stack application from sc
 This project also involved using libraries and frameworks like Handlebars and Tailwind. These tools shortened the amount of time it would've taken to acheive a similar build-out, especially one that is mobile-first, responsive, and able to handle the tiling of a growing page. 
 
 ## Usage
-The app is deployed <a href="https://fierce-reef-46335.herokuapp.com/" target="_blank">**here**<a> ## Credits
-This was a solo project meant to be built from scratch, the idea provided by staff at the UC Berkeley full-stack coding bootcamp.
-
+The app is deployed <a href="https://fierce-reef-46335.herokuapp.com/" target="_blank">**here**<a> 
 
 https://user-images.githubusercontent.com/101354032/167564028-02b4c29a-b4ac-4986-8282-939d22b95c82.mp4
 
+## Credits
+This was a solo project meant to be built from scratch, the idea provided by staff at the UC Berkeley full-stack coding bootcamp.
 
 ### Questions
 Click <a href="https://github.com/jkwalsh127" target="_blank">**here**<a> to go to my GitHub profile
