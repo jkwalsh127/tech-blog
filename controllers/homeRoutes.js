@@ -53,7 +53,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       include: [
         { model: Post },
-        { model: Comment},
       ],
     });
 

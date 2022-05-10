@@ -16,7 +16,7 @@ async function editFormHandler(event) {
     headers: { 'Content-Type': 'application/json' },
   });
   if (response.ok) {
-    document.location.replace('/');
+    document.location.replace(`/post/${post_id}`);
   } else {
     alert(response.statusText);
   }
