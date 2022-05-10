@@ -11,20 +11,32 @@
 </div>
 
 {{#if comments.length}}
-<div class="flex flex-row justify-start ml-16 my-6">
-    <h3 style="font-size: 22px;">Comments</h3>
-</div>
-    {{#each comments as |comment|}}
-    <div class="flex flex-row justify-center w-full my-6">
-        <div class="card card-bordered border-primary bg-base-100 shadow-xl basis-1/1">
-            <div class="bg-primary flex flex-row justify-between px-16 py-2 w-full text-secondary">
-                <h4>Posted by {{comment.username}} on {{comment.date}}</h4>
-            </div>
-            <div class="card-body">
-                <p>{{comment.content}}</p>
-            </div>
-        </div>
-    </div>
-    {{/each}}
-</div>
+{{#each comments as |comment|}}
+  <div class="flex flex-row justify-center w-full my-6">
+      <div class="card card-bordered border-primary bg-base-100 shadow-xl basis-1/1">
+          <div class="bg-primary flex flex-row justify-between px-16 py-2 w-full text-secondary">
+              <h4>- {{comment.user.username}}, {{comment.date}}</h4>
+          </div>
+          <div class="card-body">
+              <p>{{comment.content}}</p>
+          </div>
+      </div>
+  </div>
+{{/each}}
 {{/if}}
+
+<div class="card-body">
+  <div class="text-center">
+    <form id="comment-form">
+      <div class="form-floating">
+        <label for="new-comment">comment</label>
+        <input type="text" class="p-2 w-3/4" id="new-comment" placeholder="share your thoughts" autofocus="true">
+      </div>
+      <div class="flex flex-column justify-center mt-8">
+        <button class="btn btn-primary text-primary" type="submit">Submit Comment</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/comment.js"></script>

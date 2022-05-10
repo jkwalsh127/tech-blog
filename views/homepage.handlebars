@@ -1,4 +1,4 @@
-  {{#each posts as |post| }}
+{{#each posts as |post| }}
   <div class="flex flex-row justify-center w-full my-6">
     <div class="card card-bordered border-primary bg-base-100 shadow-xl basis-1/1">
       <a href="/post/{{post.id}}">
@@ -12,4 +12,18 @@
       </div>
     </div>
   </div>
+  {{#if comments.length}}
+  {{#each comments as |comment|}}
+    <div class="flex flex-row justify-center w-full my-6">
+        <div class="card card-bordered border-primary bg-base-100 shadow-xl basis-1/1">
+            <div class="bg-primary flex flex-row justify-between px-16 py-2 w-full text-secondary">
+                <h4>Posted by {{comment.username}} on {{comment.date}}</h4>
+            </div>
+            <div class="card-body">
+                <p>{{comment.content}}</p>
+            </div>
+        </div>
+    </div>
   {{/each}}
+  {{/if}}
+{{/each}}
