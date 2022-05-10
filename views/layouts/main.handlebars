@@ -1,41 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="garden">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Tech Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.14.3/dist/full.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <p class="logo">Tech Blog</a>
-      </h1>
-      <nav>
-        <a href="/">Homepage</a>
-        <a href="/dashboard">Dashboard</a> |
+
+  <div class="navbar bg-primary text-secondary flex">
+    <div class="flex-1">
+      <h1 class="primary" style="font-size: 45px;">Tech Blog</h1>
+    </div>
+    <div class="flex-none">
+      <ul class="justify-center menu menu-horizontal p-0">
+        <li>
+          <a href="/">Homepage</a>
+        </li>
+        <li>
+          <a href="/dashboard">Dashboard</a>
+        </li>
         {{#if logged_in}}
-        <button class="no-button" id="logout">Logout</button>
+        <li class="nav-item">
+          <a id="logout">Logout</a>
+        </li>
         {{else}}
-        <a href="/login">Login</a>
+        <li class="nav-item">
+          <a href="/login">Login</a>
+        </li>
         {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
+      </ul>
+    </div>
   </div>
+
+  <main>
+    {{{ body }}}
+  </main>
+  <footer>
+      
+  </footer>
 
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+  <script src="https://cdn.tailwindcss.com"></script>
 </body>
 
 </html>
