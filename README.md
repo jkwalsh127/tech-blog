@@ -9,7 +9,7 @@
 | Handlebars  | express-handlebars  | exprsss-session |   | |
 |   |  bcrypt |   |   | |
 
-# Table of contents
+## Table of contents
 * [Description](#description)
 * [Usage](#usage)
 * [Credits](#credits)
